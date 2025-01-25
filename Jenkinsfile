@@ -1,15 +1,15 @@
 pipeline {
     agent any
 
- stages {
-    stage('Checkout git repo') {
-        steps {
-                credentialsId: 'arbaazgit',
-                url: 'https://github.com/shaikharbaaz101/jenkins_t.git'
+ // stages {
+ //    stage('Checkout git repo') {
+ //        steps {
+ //                credentialsId: 'arbaazgit',
+ //                url: 'https://github.com/shaikharbaaz101/jenkins_t.git'
 
-            sh "ls -lat"
-        }
-    }
+ //            sh "ls -lat"
+ //        }
+ //    }
     
     stage('build image') {
         steps {
