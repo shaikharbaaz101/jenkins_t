@@ -4,7 +4,6 @@ pipeline {
  stages {
     stage('Checkout git repo') {
         steps {
-            git branch: 'main',
                 credentialsId: 'arbaazgit',
                 url: 'https://github.com/shaikharbaaz101/jenkins_t.git'
 
@@ -14,10 +13,14 @@ pipeline {
     
     stage('build image') {
         steps {
+            echo "hi from muli-dev branch"
+        }
+    }
+    stage('build image') {
+        steps {
             sh "docker build -t nginxjenkins:${params.DOCKER_TAG} ."
         }
     }
-
     stage('stop existing image') {
         steps {
             sh """
