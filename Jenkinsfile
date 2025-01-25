@@ -11,7 +11,7 @@ pipeline {
  //        }
  //    }
     
-    stage('build image') {
+    stage('echo image') {
         steps {
             echo "hi from muli-dev branch"
         }
